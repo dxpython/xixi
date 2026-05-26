@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>LOVE LETTER · NO.520 · 致 西西姐姐</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@200;300;400;500;700&family=Noto+Sans+SC:wght@200;300;400;500;700&family=Noto+Serif+SC:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#0a0814;
+    --bg-1:#120e22;
+    --bg-2:#1a1430;
+    --ink:#f3ecdf;
+    --ink-2:#c9c0b0;
+    --ink-3:#7b7287;
+    --rose:#ff6b7a;
+    --rose-2:#ff8fa3;
+    --gold:#e9b962;
+    --gold-2:#f4d089;
+    --violet:#8b6cff;
+    --violet-2:#b18cff;
+    --cyan:#7ad7ff;
+    --line:rgba(243,236,223,.12);
+    --line-2:rgba(243,236,223,.06);
+    --sans:"Inter","Noto Sans SC",system-ui,sans-serif;
+    --serif:"DM Serif Display","Noto Serif SC",serif;
+    --serif-cn:"Noto Serif SC","Songti SC",serif;
+    --mono:"Space Mono","JetBrains Mono",monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{background:var(--bg-0);color:var(--ink);font-family:var(--sans);overflow-x:hidden;font-weight:300}
+  body{
+    min-height:100vh;
+    background:
+      radial-gradient(1200px 800px at 80% -10%, rgba(139,108,255,.18), transparent 60%),
+      radial-gradient(900px 700px at -10% 30%, rgba(255,107,122,.12), transparent 55%),
+      radial-gradient(1000px 800px at 50% 110%, rgba(233,185,98,.1), transparent 60%),
+      linear-gradient(180deg,#0a0814 0%,#120e22 100%);
+    background-attachment:fixed;
+  }
+  ::selection{background:var(--rose);color:#fff}
+
+  /* ============ 入场页 ============ */
+  .enter{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;cursor:pointer;
+    background:
+      radial-gradient(900px 700px at 50% 50%,rgba(139,108,255,.2),transparent 60%),
+      radial-gradient(700px 500px at 50% 100%,rgba(255,107,122,.18),transparent 60%),
+      linear-gradient(180deg,#0a0814 0%,#1a1228 100%);
+    transition:opacity 1.4s ease, visibility 1.4s ease}
+  .enter.gone{opacity:0;visibility:hidden;pointer-events:none}
+  .enter-content{text-align:center;padding:0 24px;max-width:680px;animation:floatUp 1.6s cubic-bezier(.2,.7,.2,1)}
+  @keyframes floatUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+  .enter .label{font-family:var(--mono);font-size:11px;letter-spacing:.6em;color:var(--gold);text-transform:uppercase;margin-bottom:30px;display:inline-flex;align-items:center;gap:14px}
+  .enter .label::before,.enter .label::after{content:"";width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .enter .title{font-family:var(--serif);font-weight:400;font-size:clamp(48px,8vw,96px);line-height:1.05;letter-spacing:.04em;margin-bottom:20px;color:var(--ink)}
+  .enter .title .it{font-style:italic;background:linear-gradient(180deg,var(--rose),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .enter .cn-title{font-family:var(--serif-cn);font-weight:300;font-size:clamp(22px,3vw,32px);letter-spacing:.5em;color:var(--ink-2);margin-bottom:50px}
+  .enter .cn-title em{font-style:normal;color:var(--rose-2);font-weight:400}
+  .enter .vol{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--gold);letter-spacing:.3em;margin-bottom:80px}
+
+  .enter-cta{display:inline-flex;flex-direction:column;align-items:center;gap:24px;position:relative}
+  .enter-cta .pulse-wrap{position:relative;width:80px;height:80px;display:flex;align-items:center;justify-content:center}
+  .enter-cta .pulse-dot{width:14px;height:14px;border-radius:50%;background:var(--rose);box-shadow:0 0 24px var(--rose);position:relative;z-index:2}
+  .enter-cta .pulse-ring{position:absolute;width:100%;height:100%;border-radius:50%;border:1px solid var(--rose);opacity:0;animation:pulseRing 2.4s ease-out infinite}
+  .enter-cta .pulse-ring:nth-child(2){animation-delay:.8s}
+  .enter-cta .pulse-ring:nth-child(3){animation-delay:1.6s}
+  @keyframes pulseRing{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.4);opacity:0}}
+  .enter-cta .cta-text{font-family:var(--serif-cn);font-size:clamp(15px,1.6vw,18px);letter-spacing:.4em;color:var(--ink);font-weight:300}
+  .enter-cta .cta-text em{font-style:normal;color:var(--rose-2);font-weight:400}
+  .enter-cta .cta-en{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--ink-3);letter-spacing:.3em;animation:breathe 2.4s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.4}50%{opacity:1}}
+  .enter-cta .corner{position:absolute;width:24px;height:24px;border-color:var(--gold);opacity:.5}
+  .enter-cta .corner.tl{top:-40px;left:-40px;border-top:1px solid;border-left:1px solid}
+  .enter-cta .corner.tr{top:-40px;right:-40px;border-top:1px solid;border-right:1px solid}
+  .enter-cta .corner.bl{bottom:-40px;left:-40px;border-bottom:1px solid;border-left:1px solid}
+  .enter-cta .corner.br{bottom:-40px;right:-40px;border-bottom:1px solid;border-right:1px solid}
+
+  .enter .signature-foot{margin-top:80px;font-family:var(--mono);font-size:10px;letter-spacing:.4em;color:var(--ink-3);text-transform:uppercase}
+  .enter .signature-foot em{font-style:normal;color:var(--gold)}
+
+  /* ============ 背景星点 ============ */
+  #stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none;z-index:0;mix-blend-mode:screen}
+  .blob.a{width:520px;height:520px;background:#8b6cff;top:-100px;left:-100px;animation:floatA 22s ease-in-out infinite}
+  .blob.b{width:460px;height:460px;background:#ff6b7a;bottom:-100px;right:-100px;animation:floatB 26s ease-in-out infinite}
+  .blob.c{width:380px;height:380px;background:#e9b962;top:40%;right:30%;animation:floatC 20s ease-in-out infinite;opacity:.25}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(120px,200px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-150px,-180px)}}
+  @keyframes floatC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(80px,-60px) scale(1.2)}}
+
+  /* ============ 顶部导航 ============ */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:50;padding:24px 40px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:linear-gradient(180deg,rgba(10,8,20,.85),transparent);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .topbar .brand{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--ink-2);text-transform:uppercase}
+  .topbar .brand .logo{width:24px;height:24px;border-radius:50%;
+    background:conic-gradient(from 0deg,var(--rose),var(--gold),var(--violet),var(--rose));animation:spin 8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .topbar .meta{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--ink-3);display:flex;gap:24px;align-items:center}
+  .topbar .meta .audio{cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+  .topbar .meta .audio svg{width:12px;height:12px}
+
+  /* 播放器 */
+  .player{display:inline-flex;align-items:center;gap:12px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(243,236,223,.04)}
+  .player .audio{cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);transition:color .3s}
+  .player .audio:hover{color:var(--rose)}
+  .player .audio.playing{color:var(--rose)}
+  .player .audio.playing svg{filter:drop-shadow(0 0 4px var(--rose))}
+  .player .track-name{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--ink);text-transform:none;white-space:nowrap;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+  .player .track-name em{color:var(--rose);font-style:normal;font-weight:700}
+  .player .switch{cursor:pointer;display:inline-flex;align-items:center;color:var(--ink-3);transition:color .3s}
+  .player .switch:hover{color:var(--gold)}
+  .player .switch svg{width:12px;height:12px}
+  .player .bar{width:1px;height:14px;background:var(--line)}
+  .topbar .meta .live{display:inline-flex;align-items:center;gap:6px}
+  .topbar .meta .live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose);animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* ============ 进度条 ============ */
+  .progress{position:fixed;left:0;top:0;height:2px;width:0;background:linear-gradient(90deg,var(--rose),var(--gold),var(--violet));z-index:60;box-shadow:0 0 12px rgba(255,107,122,.5)}
+
+  /* ============ 章节侧标 ============ */
+  .sidetag{position:fixed;left:24px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:left top;z-index:40;
+    font-family:var(--mono);font-size:10px;letter-spacing:.5em;color:var(--ink-3);text-transform:uppercase;white-space:nowrap;
+    transition:opacity .4s}
+
+  /* ============ 通用 section ============ */
+  section{position:relative;padding:140px 60px;z-index:2;overflow:hidden}
+  .container{max-width:1280px;margin:0 auto;position:relative}
+
+  /* ===== 区块通用标签 ===== */
+  .chip{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--ink-2);text-transform:uppercase;
+    background:rgba(243,236,223,.03)}
+  .chip .num{color:var(--gold);font-weight:700}
+
+  /* ============ S1 封面 ============ */
+  .cover{min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding-top:180px}
+  .cover .top-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;margin-bottom:60px}
+  .cover .top-grid .col{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--ink-3);text-transform:uppercase;line-height:1.8}
+  .cover .top-grid .col.center{text-align:center;font-family:var(--serif);font-size:14px;font-style:italic;color:var(--gold);text-transform:none;letter-spacing:.4em}
+  .cover .top-grid .col.right{text-align:right}
+  .cover .top-grid .col strong{display:block;color:var(--ink);font-weight:500;font-size:13px;letter-spacing:.4em;margin-bottom:4px}
+
+  .cover-title{position:relative}
+  .cover-title .vol{font-family:var(--mono);font-size:13px;letter-spacing:.5em;color:var(--rose);margin-bottom:20px;display:flex;align-items:center;gap:14px}
+  .cover-title .vol::before,.cover-title .vol::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--rose),transparent);max-width:80px}
+  .cover-title h1{font-family:var(--serif);font-weight:400;font-size:clamp(64px,12vw,180px);line-height:.95;letter-spacing:-.02em}
+  .cover-title h1 .l{display:inline-block;opacity:0;transform:translateY(60px) rotate(8deg);animation:letterIn 1.4s cubic-bezier(.2,.7,.2,1) forwards}
+  .cover-title h1 .it{font-style:italic;color:transparent;-webkit-text-stroke:1px var(--gold)}
+  .cover-title h1 .rose{color:var(--rose)}
+  @keyframes letterIn{to{opacity:1;transform:none}}
+
+  .cover-num{position:absolute;right:0;top:-40px;font-family:var(--serif);font-style:italic;
+    font-size:clamp(120px,22vw,320px);line-height:1;font-weight:400;
+    background:linear-gradient(180deg,var(--rose) 0%,var(--gold) 60%,var(--violet) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    opacity:.18;pointer-events:none;z-index:-1}
+
+  .cover-sub{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .cover-sub .desc{font-family:var(--serif-cn);font-size:18px;line-height:2;color:var(--ink-2);font-weight:300;letter-spacing:.05em;max-width:480px;
+    opacity:0;animation:fadeIn 1.6s 1.4s forwards}
+  .cover-sub .desc em{font-style:normal;color:var(--rose-2);font-weight:400}
+  @keyframes fadeIn{to{opacity:1}}
+
+  .cover-sub .counter{font-family:var(--serif);font-style:italic;font-size:clamp(80px,12vw,160px);line-height:1;color:var(--ink);
+    text-align:right;letter-spacing:-.04em}
+  .cover-sub .counter small{display:block;font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.5em;color:var(--ink-3);margin-top:14px}
+
+  .cover-bottom{margin-top:80px;padding-top:30px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:end;
+    font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--ink-3);text-transform:uppercase}
+  .cover-bottom .scroll-cue{display:flex;align-items:center;gap:14px}
+  .cover-bottom .scroll-cue .arrow{width:24px;height:1px;background:var(--gold);position:relative;animation:slideRight 1.6s ease-in-out infinite}
+  .cover-bottom .scroll-cue .arrow::after{content:"";position:absolute;right:0;top:50%;width:6px;height:6px;border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);transform:translateY(-50%) rotate(-45deg)}
+  @keyframes slideRight{0%,100%{opacity:.3}50%{opacity:1}}
+
+  /* ============ 跑马灯 ============ */
+  .marquee{position:relative;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;background:rgba(10,8,20,.5)}
+  .marquee-track{display:flex;gap:60px;width:max-content;animation:marquee 40s linear infinite;align-items:center}
+  .marquee-track span{font-family:var(--serif);font-size:42px;font-style:italic;font-weight:400;color:var(--ink-2);white-space:nowrap;letter-spacing:.02em}
+  .marquee-track span em{font-style:normal;color:var(--rose);font-family:var(--serif-cn);font-weight:400}
+  .marquee-track span.dot{font-size:30px;color:var(--gold)}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  /* ============ Section header ============ */
+  .sec-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:60px;flex-wrap:wrap;gap:30px}
+  .sec-head .left .label{font-family:var(--mono);font-size:11px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:14px}
+  .sec-head .left .label::before{content:"";width:30px;height:1px;background:var(--gold)}
+  .sec-head .left h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-.02em}
+  .sec-head .left h2 .it{font-style:italic;color:var(--rose-2)}
+  .sec-head .left h2 .cn{font-family:var(--serif-cn);font-weight:400;font-size:.85em;display:block;margin-top:10px;color:var(--ink-2)}
+  .sec-head .right{max-width:380px;font-family:var(--serif-cn);font-size:15px;line-height:1.9;color:var(--ink-3)}
+  .sec-head .right em{font-style:normal;color:var(--rose-2)}
+
+  /* ============ S2 引言 ============ */
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .intro-grid .lead{font-family:var(--serif);font-size:clamp(28px,3.6vw,48px);line-height:1.4;font-weight:400;color:var(--ink);letter-spacing:-.01em}
+  .intro-grid .lead .it{font-style:italic;color:var(--gold)}
+  .intro-grid .lead .rose{color:var(--rose-2)}
+  .intro-grid .body{font-family:var(--serif-cn);font-size:16px;line-height:2;color:var(--ink-2);font-weight:300}
+  .intro-grid .body p{margin-bottom:1.4em}
+  .intro-grid .body p em{font-style:normal;color:var(--rose-2);font-weight:400}
+  .intro-grid .body .signature-mark{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold);letter-spacing:.3em;margin-top:30px;display:block}
+
+  /* ============ S3 名字 / 关于你 ============ */
+  .name-bg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-style:italic;
+    font-size:clamp(180px,30vw,440px);line-height:.85;font-weight:400;color:transparent;-webkit-text-stroke:1px rgba(233,185,98,.12);
+    pointer-events:none;z-index:0;white-space:nowrap;letter-spacing:-.02em}
+  .name-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}
+  .name-big{font-family:var(--serif-cn);font-weight:300;font-size:clamp(56px,9vw,140px);line-height:1.05;letter-spacing:.1em;color:var(--ink)}
+  .name-big .char{display:inline-block;opacity:0;transform:translateY(40px) scale(.8);transition:all 1s cubic-bezier(.2,.7,.2,1);position:relative}
+  .name-big .char.in{opacity:1;transform:none}
+  .name-big .char.glow{background:linear-gradient(180deg,var(--rose),var(--gold),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(255,107,122,.4))}
+  .name-en{font-family:var(--serif);font-style:italic;font-size:48px;color:var(--gold);letter-spacing:.04em;margin-top:20px;opacity:0;transform:translateX(-20px);transition:all 1.2s 1.4s ease}
+  .name-en.in{opacity:1;transform:none}
+  .name-info{font-family:var(--serif-cn);font-size:16px;line-height:2;color:var(--ink-2)}
+  .name-info p{margin-bottom:1.2em}
+  .name-info p em{font-style:normal;color:var(--rose-2);font-weight:400}
+  .name-info .quote{margin-top:30px;padding:24px;border:1px solid var(--line);background:rgba(243,236,223,.02);border-left:2px solid var(--rose);
+    font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6;color:var(--ink);font-weight:400}
+  .name-info .quote em{font-family:var(--serif-cn);font-style:normal;color:var(--gold);font-weight:400}
+
+  /* ============ S4 时间线 ============ */
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+  .tl-item{padding:40px 24px 40px 0;border-right:1px solid var(--line);position:relative;
+    opacity:0;transform:translateY(20px);transition:all 1s cubic-bezier(.2,.7,.2,1)}
+  .tl-item:last-child{border-right:none}
+  .tl-item.in{opacity:1;transform:none}
+  .tl-item .stage{font-family:var(--mono);font-size:11px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+  .tl-item h4{font-family:var(--serif-cn);font-size:24px;font-weight:400;color:var(--ink);margin-bottom:14px;letter-spacing:.04em}
+  .tl-item p{font-family:var(--serif-cn);font-size:14px;line-height:1.9;color:var(--ink-3);font-weight:300}
+  .tl-item .dot{position:absolute;top:-5px;left:0;width:10px;height:10px;border-radius:50%;background:var(--rose);box-shadow:0 0 12px var(--rose)}
+  .tl-item:nth-child(2) .dot{background:var(--gold);box-shadow:0 0 12px var(--gold)}
+  .tl-item:nth-child(3) .dot{background:var(--violet);box-shadow:0 0 12px var(--violet)}
+  .tl-item:nth-child(4) .dot{background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+
+  /* ============ S5 自白·克制 ============ */
+  .hide-block{padding:80px;border:1px solid var(--line);background:rgba(243,236,223,.02);border-radius:4px;position:relative;overflow:hidden}
+  .hide-block::before{content:"01";position:absolute;top:30px;right:40px;font-family:var(--serif);font-style:italic;font-size:120px;color:rgba(255,107,122,.08);font-weight:400}
+  .hide-block .lead{font-family:var(--serif);font-style:italic;font-size:36px;line-height:1.4;color:var(--ink);margin-bottom:40px;max-width:780px}
+  .hide-block .lead em{font-style:normal;color:var(--gold);font-family:var(--serif-cn);font-weight:400}
+  .hide-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;margin-top:50px}
+  .hide-card{padding:30px;border:1px solid var(--line);background:rgba(10,8,20,.4);border-radius:4px;transition:all .5s}
+  .hide-card:hover{border-color:var(--rose);transform:translateY(-4px);background:rgba(255,107,122,.04)}
+  .hide-card .top{font-family:var(--mono);font-size:10px;letter-spacing:.4em;color:var(--ink-3);text-transform:uppercase;margin-bottom:14px}
+  .hide-card .from{font-family:var(--serif-cn);font-size:14px;color:var(--ink-3);text-decoration:line-through;margin-bottom:14px}
+  .hide-card .arrow{font-family:var(--mono);color:var(--rose);font-size:14px;margin-bottom:14px}
+  .hide-card .to{font-family:var(--serif-cn);font-size:17px;color:var(--ink);line-height:1.6}
+  .hide-end{margin-top:60px;text-align:center;font-family:var(--serif-cn);font-size:18px;line-height:2;color:var(--ink-2);letter-spacing:.05em}
+  .hide-end em{font-style:normal;color:var(--rose-2);font-weight:400}
+
+  /* ============ S6 光 ============ */
+  .light-wrap{position:relative;min-height:600px;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:#06040d}
+  .light-orb{position:absolute;width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle,#fff5e0,rgba(255,180,120,.6) 30%,transparent 70%);
+    filter:blur(20px);pointer-events:none;mix-blend-mode:screen;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+  .light-content{position:relative;z-index:2;padding:80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:600px}
+  .light-content .text-side h3{font-family:var(--serif);font-size:clamp(40px,5vw,72px);line-height:1.05;color:var(--ink);font-weight:400;margin-bottom:30px}
+  .light-content .text-side h3 .it{font-style:italic;background:linear-gradient(180deg,#fff5e0,#ff8fa3,#ff6b7a);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .light-content .text-side p{font-family:var(--serif-cn);font-size:16px;line-height:2;color:var(--ink-2);margin-bottom:1.4em;max-width:480px}
+  .light-content .text-side p em{font-style:normal;color:var(--rose-2);font-weight:400}
+  .light-content .text-side .tag{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase}
+  .light-content .visual{position:relative;height:400px}
+  .light-content .ring{position:absolute;border:1px solid rgba(243,236,223,.15);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+  .light-content .ring.r1{width:120px;height:120px;animation:rRot 20s linear infinite}
+  .light-content .ring.r2{width:220px;height:220px;animation:rRot 30s linear infinite reverse}
+  .light-content .ring.r3{width:340px;height:340px;animation:rRot 40s linear infinite}
+  .light-content .ring.r1::before,.light-content .ring.r2::before,.light-content .ring.r3::before{content:"";position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold);top:-4px;left:50%;transform:translateX(-50%)}
+  .light-content .ring.r2::before{background:var(--rose);box-shadow:0 0 14px var(--rose)}
+  .light-content .ring.r3::before{background:var(--violet);box-shadow:0 0 14px var(--violet)}
+  @keyframes rRot{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  .light-content .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;
+    background:radial-gradient(circle,#fff5e0,#ff8fa3 60%,transparent 80%);
+    box-shadow:0 0 80px rgba(255,143,163,.6);animation:coreP 3s ease-in-out infinite}
+  @keyframes coreP{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.15)}}
+
+  /* ============ S7 承诺 / 3 promises ============ */
+  .promises{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+  .promise{position:relative;padding:40px 30px;border:1px solid var(--line);background:rgba(243,236,223,.02);border-radius:4px;
+    opacity:0;transform:translateY(40px);transition:all 1s cubic-bezier(.2,.7,.2,1);
+    overflow:hidden;cursor:default}
+  .promises.in .promise:nth-child(1){transition-delay:.1s}
+  .promises.in .promise:nth-child(2){transition-delay:.3s}
+  .promises.in .promise:nth-child(3){transition-delay:.5s}
+  .promises.in .promise{opacity:1;transform:none}
+  .promise::before{content:"";position:absolute;left:0;top:0;width:0;height:100%;background:linear-gradient(180deg,var(--rose),var(--gold));z-index:-1;transition:width .6s ease}
+  .promise:hover::before{width:100%;opacity:.08}
+  .promise:hover{border-color:var(--rose);transform:translateY(-8px)}
+  .promise .no{font-family:var(--serif);font-style:italic;font-size:80px;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold);margin-bottom:20px}
+  .promise h4{font-family:var(--serif-cn);font-size:32px;font-weight:400;color:var(--ink);margin-bottom:14px;letter-spacing:.1em}
+  .promise .en{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--gold);margin-bottom:24px}
+  .promise p{font-family:var(--serif-cn);font-size:15px;line-height:2;color:var(--ink-2);font-weight:300}
+  .promise p em{font-style:normal;color:var(--rose-2);font-weight:400}
+
+  /* ============ S8 祝愿 ============ */
+  .wishes{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line)}
+  .wish{display:grid;grid-template-columns:80px 1fr auto;gap:40px;padding:36px 0;border-bottom:1px solid var(--line);align-items:center;
+    opacity:0;transform:translateX(-20px);transition:all 1s cubic-bezier(.2,.7,.2,1)}
+  .wishes.in .wish{opacity:1;transform:none}
+  .wishes.in .wish:nth-child(1){transition-delay:.1s}
+  .wishes.in .wish:nth-child(2){transition-delay:.25s}
+  .wishes.in .wish:nth-child(3){transition-delay:.4s}
+  .wishes.in .wish:nth-child(4){transition-delay:.55s}
+  .wishes.in .wish:nth-child(5){transition-delay:.7s}
+  .wish:hover{background:linear-gradient(90deg,rgba(255,107,122,.05),transparent)}
+  .wish .no{font-family:var(--serif);font-style:italic;font-size:48px;color:var(--gold);line-height:1}
+  .wish .text{font-family:var(--serif-cn);font-size:clamp(18px,2.2vw,26px);font-weight:300;line-height:1.6;color:var(--ink);letter-spacing:.04em}
+  .wish .text em{font-style:normal;color:var(--rose-2);font-weight:400;padding:0 .2em}
+  .wish .en{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-3);letter-spacing:.2em;text-align:right;min-width:160px}
+
+  /* ============ S9 落款 ============ */
+  .sign{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:60px;border:1px solid var(--line);background:rgba(243,236,223,.02);border-radius:4px;position:relative;overflow:hidden}
+  .sign::before{content:"❤";position:absolute;font-family:var(--serif);font-size:400px;color:rgba(255,107,122,.04);right:-60px;bottom:-120px;line-height:1}
+  .sign .text{position:relative;z-index:2}
+  .sign .text .label{font-family:var(--mono);font-size:11px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:24px}
+  .sign .text h3{font-family:var(--serif);font-size:clamp(36px,4.5vw,60px);line-height:1.3;font-weight:400;color:var(--ink);margin-bottom:30px}
+  .sign .text h3 .it{font-style:italic;color:var(--rose-2)}
+  .sign .text p{font-family:var(--serif-cn);font-size:16px;line-height:2;color:var(--ink-2);margin-bottom:1em}
+  .sign .text p em{font-style:normal;color:var(--rose-2);font-weight:400}
+  .sign .right{position:relative;z-index:2;text-align:right}
+  .sign .right .from-label{font-family:var(--mono);font-size:11px;letter-spacing:.4em;color:var(--ink-3);text-transform:uppercase;margin-bottom:20px}
+  .sign .right .from-name{font-family:var(--serif);font-style:italic;font-size:clamp(48px,7vw,96px);line-height:1;
+    background:linear-gradient(180deg,var(--rose),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:20px}
+  .sign .right .from-cn{font-family:var(--serif-cn);font-size:18px;color:var(--ink-2);letter-spacing:.2em;font-weight:300;margin-bottom:30px}
+  .sign .right .stamp{display:inline-block;padding:14px 24px;border:1px solid var(--rose);border-radius:4px;font-family:var(--mono);font-size:11px;letter-spacing:.4em;color:var(--rose);text-transform:uppercase;background:rgba(255,107,122,.05)}
+
+  /* ============ S · 手写信 ============ */
+  .hw-wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:60px;align-items:center}
+  .hw-paper{position:relative;perspective:1400px}
+  .hw-paper-inner{position:relative;transform:rotate(-1.5deg);transition:transform 1s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(0 40px 60px rgba(0,0,0,.5))}
+  .hw-paper-inner:hover{transform:rotate(0deg) scale(1.02)}
+  .hw-paper img{display:block;width:100%;height:auto;border-radius:6px;
+    background:#f8f3e5;
+    box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 0 0 1px rgba(243,236,223,.18);
+    transition:transform 1.2s ease}
+  .hw-paper .stamp-corner{position:absolute;right:-18px;top:-18px;width:80px;height:80px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,107,122,.95),rgba(180,40,50,.95));
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-style:italic;font-size:14px;color:#fff;letter-spacing:.1em;text-align:center;line-height:1.1;
+    border:1px solid rgba(255,255,255,.3);
+    box-shadow:0 12px 24px -10px rgba(255,107,122,.6);
+    transform:rotate(-12deg)}
+  .hw-paper .stamp-corner small{display:block;font-family:var(--mono);font-style:normal;font-size:8px;letter-spacing:.3em;margin-top:2px;opacity:.85}
+  .hw-paper .tape{position:absolute;top:-22px;left:50%;transform:translateX(-50%) rotate(-3deg);width:120px;height:30px;
+    background:linear-gradient(180deg,rgba(233,185,98,.45),rgba(233,185,98,.25));
+    border-left:1px dashed rgba(255,255,255,.3);border-right:1px dashed rgba(255,255,255,.3);
+    backdrop-filter:blur(2px);box-shadow:0 6px 12px rgba(0,0,0,.3)}
+  .hw-paper .pin{position:absolute;left:30px;top:-12px;width:16px;height:16px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,#ff8fa3,#a8294a);
+    box-shadow:0 4px 8px rgba(0,0,0,.5),inset 0 -2px 4px rgba(0,0,0,.3)}
+
+  .hw-text{font-family:var(--serif-cn);color:var(--ink);position:relative}
+  .hw-text .badge{display:inline-flex;align-items:center;gap:10px;padding:6px 14px;border:1px solid var(--rose);border-radius:999px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.4em;color:var(--rose);text-transform:uppercase;background:rgba(255,107,122,.06);margin-bottom:24px}
+  .hw-text .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--rose);box-shadow:0 0 8px var(--rose)}
+  .hw-text h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,44px);line-height:1.3;color:var(--ink);margin-bottom:30px}
+  .hw-text h3 .it{font-style:italic;color:var(--gold)}
+  .hw-text .verse{font-family:var(--serif-cn);font-size:17px;line-height:2.1;color:var(--ink-2);font-weight:300;letter-spacing:.05em}
+  .hw-text .verse p{margin-bottom:1.2em}
+  .hw-text .verse em{font-style:normal;color:var(--rose-2);font-weight:400}
+  .hw-text .verse .highlight{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold);display:block;margin:24px 0;letter-spacing:.05em}
+  .hw-text .sign{margin-top:30px;display:flex;align-items:center;gap:14px;justify-content:flex-end}
+  .hw-text .sign .line{flex:1;max-width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+  .hw-text .sign .star-name{font-family:"Ma Shan Zheng",var(--serif-cn);font-size:48px;
+    background:linear-gradient(180deg,var(--gold-2),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.15em}
+
+  /* 音频卡片(可点击播放自唱) */
+  .voice-card{margin-top:30px;display:flex;align-items:center;gap:16px;padding:18px 22px;border:1px solid var(--line);border-radius:999px;background:rgba(255,107,122,.05);cursor:pointer;transition:all .4s}
+  .voice-card:hover{border-color:var(--rose);background:rgba(255,107,122,.1);transform:translateX(4px)}
+  .voice-card .icon{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    box-shadow:0 0 20px rgba(255,107,122,.4);position:relative}
+  .voice-card .icon::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(255,107,122,.4);animation:ripple 2s ease-out infinite}
+  @keyframes ripple{from{transform:scale(.8);opacity:1}to{transform:scale(1.4);opacity:0}}
+  .voice-card.playing .icon::after{animation-duration:1.2s}
+  .voice-card .icon svg{width:18px;height:18px;color:#fff}
+  .voice-card .info{flex:1;font-family:var(--serif-cn);min-width:0}
+  .voice-card .info .label{font-family:var(--mono);font-size:9px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
+  .voice-card .info .name{font-size:15px;color:var(--ink);font-weight:400;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .voice-card .info .name em{font-style:normal;color:var(--rose-2)}
+  .voice-card .arrow{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.2em}
+
+  /* ============ S10 片尾 ============ */
+  .footer{padding:100px 60px 80px;border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden}
+  .footer .fin{font-family:var(--serif);font-style:italic;font-size:clamp(40px,6vw,72px);background:linear-gradient(90deg,var(--rose),var(--gold),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.3em;margin-bottom:40px}
+  .footer .signature-line{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:30px;font-family:var(--serif-cn);font-size:clamp(20px,2.6vw,28px);color:var(--ink);letter-spacing:.3em;font-weight:300}
+  .footer .signature-line em{font-style:normal;font-family:"Ma Shan Zheng",var(--serif-cn);font-size:1.4em;background:linear-gradient(180deg,var(--gold-2),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.15em;padding:0 .1em}
+  .footer .signature-line .l{flex:0 1 80px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-soft,var(--gold)),transparent)}
+  .footer .signature-en{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-3);letter-spacing:.3em;margin-bottom:60px}
+  .footer .meta{font-family:var(--mono);font-size:11px;letter-spacing:.4em;color:var(--ink-3);text-transform:uppercase;line-height:2.2}
+  .footer .meta .heart{display:inline-block;color:var(--rose);animation:beat 1.4s ease-in-out infinite}
+  @keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.3)}}
+  .footer .stars-deco{position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--rose),var(--gold),var(--violet),transparent);opacity:.5}
+  .footer .star-twinkle{position:absolute;color:var(--gold);font-size:14px;animation:twinkleStar 3s ease-in-out infinite;pointer-events:none}
+  @keyframes twinkleStar{0%,100%{opacity:.2;transform:scale(.8) rotate(0deg)}50%{opacity:1;transform:scale(1.2) rotate(180deg)}}
+
+  /* ============ Reveal 通用 ============ */
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity 1.2s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ============ 响应式 ============ */
+  @media (max-width:920px){
+    section{padding:90px 24px}
+    .topbar{padding:18px 20px}
+    .topbar .brand,.topbar .meta{font-size:10px;gap:12px}
+    .cover{padding-top:120px}
+    .cover .top-grid{grid-template-columns:1fr;gap:20px;text-align:center}
+    .cover .top-grid .col.right{text-align:center}
+    .cover-num{font-size:60vw;top:auto;bottom:30%;right:-20px;opacity:.1}
+    .cover-sub{grid-template-columns:1fr;gap:30px}
+    .cover-sub .counter{text-align:left}
+    .intro-grid,.name-grid,.light-content,.hw-wrap{grid-template-columns:1fr;gap:40px}
+    .hw-paper-inner{transform:none}
+    .hw-paper .stamp-corner{right:-10px;top:-10px;width:64px;height:64px;font-size:11px}
+    .timeline,.promises{grid-template-columns:1fr 1fr}
+    .hide-list{grid-template-columns:1fr}
+    .hide-block{padding:40px 24px}
+    .sign{grid-template-columns:1fr;gap:40px;padding:40px 24px}
+    .sign .right{text-align:left}
+    .wish{grid-template-columns:50px 1fr;gap:20px;padding:24px 0}
+    .wish .en{display:none}
+    .sidetag{display:none}
+    .marquee-track span{font-size:24px}
+  }
+  @media (max-width:560px){
+    .timeline,.promises{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- 入场页 · 点击任意处启动音乐并进入 -->
+<div class="enter" id="enter" role="button" tabindex="0" aria-label="点击进入">
+  <div class="enter-content">
+    <div class="label">A LOVE LETTER · NO.520</div>
+    <div class="title">To <span class="it">XiXi</span>,<br/>my <span class="it">sister.</span></div>
+    <div class="cn-title">致 · <em>西 西 姐 姐</em></div>
+    <div class="vol">— VOL.01 · 2026 · LATE SPRING —</div>
+
+    <div class="enter-cta">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+      <div class="pulse-wrap">
+        <span class="pulse-ring"></span>
+        <span class="pulse-ring"></span>
+        <span class="pulse-ring"></span>
+        <span class="pulse-dot"></span>
+      </div>
+      <div class="cta-text">轻 触 · <em>为 你 翻 开 这 封 信</em></div>
+      <div class="cta-en">— tap anywhere to begin —</div>
+    </div>
+
+    <div class="signature-foot">所 有 的 浪 漫 · 为 <em>星 星</em> 所 创 造</div>
+  </div>
+</div>
+
+<canvas id="stars"></canvas>
+<div class="blob a"></div>
+<div class="blob b"></div>
+<div class="blob c"></div>
+
+<div class="progress" id="progress"></div>
+
+<header class="topbar">
+  <div class="brand"><span class="logo"></span><span>LOVE LETTER · NO.<span style="color:var(--rose)">520</span></span></div>
+  <div class="meta">
+    <span class="live">ISSUE 01 · SPRING 2026</span>
+    <span style="opacity:.3">/</span>
+    <div class="player">
+      <span class="audio" id="audioToggle" title="播放/暂停">
+        <svg id="iconPlay" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <svg id="iconPause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </span>
+      <span class="track-name" id="trackName">geng · <em>背景音</em></span>
+      <span class="bar"></span>
+      <span class="switch" id="audioSwitch" title="切换音轨">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+      </span>
+    </div>
+  </div>
+</header>
+
+<div class="sidetag" id="sidetag">CHAPTER · 01 · COVER</div>
+
+<!-- =================== S1 COVER =================== -->
+<section class="cover">
+  <div class="container">
+    <div class="top-grid">
+      <div class="col"><strong>To</strong>XIXI · 西西姐姐<br/>The one I quietly think of</div>
+      <div class="col center">— a private letter —<br/>written by hand · sent by night</div>
+      <div class="col right"><strong>Date</strong>2026 · 05 · 20<br/>Wednesday · Late Spring</div>
+    </div>
+
+    <div class="cover-title">
+      <div class="vol">VOL.520 · ISSUE NO.01 · INTIMATE</div>
+      <span class="cover-num">520</span>
+      <h1 aria-label="To XiXi Sister">
+        <span class="l" style="animation-delay:.1s">T</span><span class="l" style="animation-delay:.18s">o</span>
+        <span class="l" style="animation-delay:.5s">&nbsp;</span>
+        <span class="l it" style="animation-delay:.28s">X</span><span class="l it" style="animation-delay:.36s">i</span><span class="l it" style="animation-delay:.44s">X</span><span class="l it" style="animation-delay:.52s">i</span><span class="l" style="animation-delay:.58s">,</span><br/>
+        <span class="l rose" style="animation-delay:.7s">m</span><span class="l rose" style="animation-delay:.76s">y</span>
+        <span class="l" style="animation-delay:.8s">&nbsp;</span>
+        <span class="l" style="animation-delay:.84s">s</span><span class="l" style="animation-delay:.9s">i</span><span class="l" style="animation-delay:.96s">s</span><span class="l" style="animation-delay:1.02s">t</span><span class="l" style="animation-delay:1.08s">e</span><span class="l" style="animation-delay:1.14s">r</span><span class="l rose" style="animation-delay:1.2s">.</span>
+      </h1>
+    </div>
+
+    <div class="cover-sub">
+      <div class="desc">
+        这不是一张漂亮的明信片，也不是一段精心准备过的告白。<br/>
+        只是一个不太会说话的人，在 520 这一天，把所有<em>小心翼翼的温柔</em>，<br/>
+        写成了关于<em>你</em>的句子。
+      </div>
+      <div class="counter">
+        <span id="counterNum">0</span>
+        <small>WORDS WRITTEN FOR YOU</small>
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <span>© 星 星 · 2026 · for 西 西</span>
+      <span class="scroll-cue"><span>SCROLL TO READ</span><span class="arrow"></span></span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== 跑马灯 =================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>致 <em>西西姐姐</em></span><span class="dot">✦</span>
+    <span>To <em>XiXi</em>, My Sister</span><span class="dot">✦</span>
+    <span><em>520</em> · 一封不求回信的信</span><span class="dot">✦</span>
+    <span>A Letter for The One I Quietly Think Of</span><span class="dot">✦</span>
+    <span>致 <em>西西姐姐</em></span><span class="dot">✦</span>
+    <span>To <em>XiXi</em>, My Sister</span><span class="dot">✦</span>
+    <span><em>520</em> · 一封不求回信的信</span><span class="dot">✦</span>
+    <span>A Letter for The One I Quietly Think Of</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- =================== S2 INTRO =================== -->
+<section data-tag="CHAPTER · 02 · INTRO">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="left">
+        <div class="label">CHAPTER 02 · <span class="num">001</span></div>
+        <h2><span class="it">Today,</span><br/>I want to write<br/>down your name.<span class="cn">今天 · 我想认真写下你的名字</span></h2>
+      </div>
+      <div class="right">这一天本该属于那些足够确定、足够勇敢的人。<br/>而我不太一样——我只能用很笨的方式，把心里很轻、很安静的话，<em>慢慢写下来</em>。</div>
+    </div>
+
+    <div class="intro-grid">
+      <div class="lead reveal">
+        我想了很久 ——<br/>
+        还是觉得 <span class="rose">自己不是一个</span><br/>
+        <span class="it">很会表达的人。</span>
+      </div>
+      <div class="body reveal">
+        <p>很多话在心里想了很多遍，到了嘴边就变得很轻——轻到像一句普通的问候，轻到连我自己都觉得遗憾。</p>
+        <p>所以今天，我想把那些<em>平时没有说出口的话</em>，慢慢写下来。不求它多漂亮，也不求它多动人。只希望它<em>足够真诚</em>。</p>
+        <p>因为这是我现在唯一能拿得出手的东西。</p>
+        <span class="signature-mark">— from 星星 · written on May 20</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S3 NAME =================== -->
+<section data-tag="CHAPTER · 03 · YOUR NAME" style="min-height:100vh;display:flex;align-items:center">
+  <div class="name-bg">XIXI</div>
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="left">
+        <div class="label">CHAPTER 03 · <span class="num">002</span></div>
+        <h2>About <span class="it">Her</span><span class="cn">关于 · 一个名字的重量</span></h2>
+      </div>
+      <div class="right">
+        她叫西西。比我大一岁。<br/>所以我叫她<em>姐姐</em>。<br/>这两个字 · 后来有了完全不一样的重量。
+      </div>
+    </div>
+
+    <div class="name-grid">
+      <div>
+        <div class="name-big" id="nameBig">
+          <span class="char glow">西</span><span class="char glow">西</span><span class="char">姐</span><span class="char">姐</span>
+        </div>
+        <div class="name-en" id="nameEn">— XiXi, my sister.</div>
+      </div>
+      <div class="name-info reveal">
+        <p>认识的时间其实不算长。短到放进人生里，可能只是<em>很小很小的一段</em>。</p>
+        <p>可是有些人就是这样——明明出现得不久，却让人记住很多细节。我会记得你的名字、你的声音、你比我大一岁这件事。</p>
+        <p>"姐姐"这两个字，里面有一点亲近、一点小心翼翼、还有<em>一点我不敢说得太明白的在意</em>。</p>
+        <div class="quote">每次这样叫你 ——<br/>心里就会有一块地方安静下来，<br/>像是终于有了一个 <em>可以轻轻放下情绪的角落</em>。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S4 TIMELINE =================== -->
+<section data-tag="CHAPTER · 04 · TIMELINE">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="left">
+        <div class="label">CHAPTER 04 · <span class="num">003</span></div>
+        <h2>Four <span class="it">small things</span> happened after we met.<span class="cn">认识你之后 · 发生的四件小事</span></h2>
+      </div>
+      <div class="right">不是什么轰轰烈烈的事，<br/>就是<em>日子悄悄地不一样了</em>。</div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <span class="dot"></span>
+        <div class="stage">PHASE · 01</div>
+        <h4>初次认识</h4>
+        <p>原本只是普通的一次相遇。我没有想到这只是个开始。你说话的样子，被我悄悄记住了。</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="dot"></span>
+        <div class="stage">PHASE · 02</div>
+        <h4>称你为姐</h4>
+        <p>这本只是一个自然的称呼。可后来"姐姐"两个字慢慢有了不一样的温度——比普通的称呼柔软一点。</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="dot"></span>
+        <div class="stage">PHASE · 03</div>
+        <h4>开始期待</h4>
+        <p>开始在意一句话的语气，开始期待消息提示音。会因为你一点点的回应开心很久，又在安静下来时突然想到你。</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="dot"></span>
+        <div class="stage">PHASE · 04</div>
+        <h4>悄悄在意</h4>
+        <p>明明很轻——轻到不能随便说出口。可它又很重——重到我没有办法假装它不存在。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S5 把话藏起来 =================== -->
+<section data-tag="CHAPTER · 05 · WHAT I HID">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="left">
+        <div class="label">CHAPTER 05 · <span class="num">004</span></div>
+        <h2>What I <span class="it">quietly</span> hid.<span class="cn">那些被我悄悄藏起来的话</span></h2>
+      </div>
+      <div class="right">很多话，我都没有说出口。<br/>不是不想——<em>是不敢</em>。</div>
+    </div>
+
+    <div class="hide-block reveal">
+      <div class="lead">所以很多时候，我只能<em>把话藏起来</em>——把它们换成另一种、看起来很普通的样子。</div>
+      <div class="hide-list">
+        <div class="hide-card">
+          <div class="top">CASE · A</div>
+          <div class="from">我想问你今天累不累、吃了吗、心情好不好</div>
+          <div class="arrow">→ 最后只发了</div>
+          <div class="to">"今天还好吗？"</div>
+        </div>
+        <div class="hide-card">
+          <div class="top">CASE · B</div>
+          <div class="from">我想说我有点在意你、想多和你说几句</div>
+          <div class="arrow">→ 最后只留下</div>
+          <div class="to">一次沉默</div>
+        </div>
+        <div class="hide-card">
+          <div class="top">CASE · C</div>
+          <div class="from">我想靠近你、想让你知道你是被认真想着的</div>
+          <div class="arrow">→ 最后变成</div>
+          <div class="to">很普通的聊天</div>
+        </div>
+      </div>
+      <div class="hide-end">
+        我怕说得太多，会打扰你。怕说得太重，让你为难。<br/>
+        更怕有一天你发现，原来我不是一个多好的人——然后<em>慢慢离我远一点</em>。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S6 LIGHT =================== -->
+<section data-tag="CHAPTER · 06 · THE LIGHT">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="left">
+        <div class="label">CHAPTER 06 · <span class="num">005</span></div>
+        <h2>You are <span class="it">the light.</span><span class="cn">你 · 就是那束光</span></h2>
+      </div>
+      <div class="right">不是刺眼的，不是轰轰烈烈的。<br/>是<em>很容易让人舍不得移开目光的那种</em>。</div>
+    </div>
+
+    <div class="light-wrap reveal" id="lightWrap">
+      <div class="light-orb" id="lightOrb"></div>
+      <div class="light-content">
+        <div class="text-side">
+          <h3>很 <span class="it">安静</span>，<br/>很 <span class="it">温柔</span>。</h3>
+          <p>你不是那种需要刻意发光的人。你只是很自然地出现，很自然地说话，很自然地做你自己——可就是会让人觉得，原来世界上真的有人可以<em>这么温柔</em>。</p>
+          <p>有时候我觉得自己像一个站在很远处的人。看见一束很温柔的光，很想走过去，<em>却又担心自己的影子太重</em>，会挡住那束光原本的干净。</p>
+          <div class="tag">MOVE YOUR CURSOR · LET THE LIGHT FOLLOW</div>
+        </div>
+        <div class="visual">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="ring r3"></div>
+          <div class="core"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S7 PROMISES =================== -->
+<section data-tag="CHAPTER · 07 · THREE PROMISES">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="left">
+        <div class="label">CHAPTER 07 · <span class="num">006</span></div>
+        <h2>Three <span class="it">small promises</span> to be a better me.<span class="cn">我想认真变好的 · 三件小事</span></h2>
+      </div>
+      <div class="right">不是想突然变得多厉害。<br/>也不是为了证明什么。<br/>只是因为<em>遇见你之后</em>，我第一次这么想。</div>
+    </div>
+
+    <div class="promises">
+      <div class="promise">
+        <div class="no">01</div>
+        <h4>稳 一 点</h4>
+        <div class="en">— Be more steady.</div>
+        <p>这样在你<em>累的时候</em>，我至少不会慌张。可以稳稳地接住你低落的那一刻，而不是只会跟着不安。</p>
+      </div>
+      <div class="promise">
+        <div class="no">02</div>
+        <h4>温 柔 一 点</h4>
+        <div class="en">— Be more gentle.</div>
+        <p>这样靠近你的时候，<em>不会让你觉得沉重</em>。你的世界已经够轻、够柔了，我想成为里面同样轻、同样柔的一部分。</p>
+      </div>
+      <div class="promise">
+        <div class="no">03</div>
+        <h4>勇 敢 一 点</h4>
+        <div class="en">— Be more brave.</div>
+        <p>这样面对心里很珍贵的人，<em>不会总是把真心藏到最后</em>。也许不是今天，不是马上——但至少有一天，我能正常地把它说出来。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S8 WISHES =================== -->
+<section data-tag="CHAPTER · 08 · WISHES" style="background:linear-gradient(180deg,transparent,rgba(255,107,122,.05))">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="left">
+        <div class="label">CHAPTER 08 · <span class="num">007</span></div>
+        <h2>I <span class="it">wish</span> you ...<span class="cn">五个 · 不分大小的祝愿</span></h2>
+      </div>
+      <div class="right">如果可以——希望以后的日子里，<em>你能一直好好的</em>。</div>
+    </div>
+
+    <div class="wishes">
+      <div class="wish">
+        <div class="no">01</div>
+        <div class="text">愿你 <em>开心</em> 的时候 · 是真的开心。</div>
+        <div class="en">— may your joy be real.</div>
+      </div>
+      <div class="wish">
+        <div class="no">02</div>
+        <div class="text">愿你 <em>难过</em> 的时候 · 不用一个人撑太久。</div>
+        <div class="en">— may you never be alone.</div>
+      </div>
+      <div class="wish">
+        <div class="no">03</div>
+        <div class="text">愿你遇到烦心事的时候 · 身边 <em>有人愿意听你慢慢说</em>。</div>
+        <div class="en">— may someone listen.</div>
+      </div>
+      <div class="wish">
+        <div class="no">04</div>
+        <div class="text">愿你所有不经意的 <em>温柔</em> · 都被人好好放在心上。</div>
+        <div class="en">— may you be cherished.</div>
+      </div>
+      <div class="wish">
+        <div class="no">05</div>
+        <div class="text">愿你很累的时候 · 也能 <em>被这个世界轻轻抱一下</em>。</div>
+        <div class="en">— may the world hold you softly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S9 HANDWRITTEN =================== -->
+<section data-tag="CHAPTER · 09 · HANDWRITTEN BY STAR">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="left">
+        <div class="label">CHAPTER 09 · <span class="num">008</span></div>
+        <h2>Written <span class="it">by hand.</span><span class="cn">手 写 的 那 几 句</span></h2>
+      </div>
+      <div class="right">键盘敲不出来的话，<br/>就用<em>笔尖</em>慢慢写给你看。</div>
+    </div>
+
+    <div class="hw-wrap">
+      <div class="hw-paper reveal">
+        <div class="hw-paper-inner">
+          <span class="tape"></span>
+          <span class="pin"></span>
+          <img src="love.jpg" alt="星星手写给西西的信" />
+          <span class="stamp-corner">星星<small>SEALED</small></span>
+        </div>
+      </div>
+      <div class="hw-text reveal">
+        <span class="badge"><span class="dot"></span>HANDWRITTEN · 520 · 2026</span>
+        <h3>"平 生 一 顾，<br/><span class="it">至 此 终 年。</span>"</h3>
+        <div class="verse">
+          <p>To 西西：</p>
+          <p>谢谢你包容我的小情绪，<em>一点一滴</em>，你真的很好。</p>
+          <span class="highlight">— 平生一顾、至此终年 —</span>
+          <p>我不太擅长表达，也习惯了凡事都要一个答案。<br/>但<em>唯独对你</em>——我只想在这个不确定的世界里，<em>安安静静陪你走很久</em>。</p>
+        </div>
+        <div class="sign">
+          <span class="line"></span>
+          <span style="font-family:var(--mono);font-size:11px;letter-spacing:.4em;color:var(--ink-3)">FROM</span>
+          <span class="star-name">星 星</span>
+        </div>
+        <div class="voice-card" id="voiceCard" title="点击播放星星自己唱的《就是爱你》">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+          <div class="info">
+            <div class="label">VOICE MEMO · 自 唱</div>
+            <div class="name">就 是 爱 你 · <em>星星 翻唱给西西</em></div>
+          </div>
+          <span class="arrow">▶ PLAY</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S10 SIGNATURE =================== -->
+<section data-tag="CHAPTER · 10 · SIGNED">
+  <div class="container">
+    <div class="sign reveal">
+      <div class="text">
+        <div class="label">— FINAL NOTE · 落 笔 之 前 —</div>
+        <h3>这是一封 <span class="it">没有寄出</span>、<br/>也<span class="it">不求回信</span> 的信。</h3>
+        <p>如果你看见了 —— 那它就是<em>为你亮过的一盏小灯</em>。</p>
+        <p>如果你只是路过 —— 那它也会安安静静地留在原地，不吵不闹，不催促，也不委屈。</p>
+        <p>因为有些温柔，本来就不是为了得到什么。<em>只是因为那个人值得。</em></p>
+      </div>
+      <div class="right">
+        <div class="from-label">— FROM —</div>
+        <div class="from-name">XingXing.</div>
+        <div class="from-cn">星 · 星</div>
+        <span class="stamp">SEALED · 2026.05.20</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S11 FOOTER =================== -->
+<footer class="footer">
+  <span class="stars-deco"></span>
+  <span class="star-twinkle" style="left:8%;top:30%;animation-delay:.2s">✦</span>
+  <span class="star-twinkle" style="right:12%;top:40%;animation-delay:.8s">✧</span>
+  <span class="star-twinkle" style="left:18%;top:70%;animation-delay:1.4s">✦</span>
+  <span class="star-twinkle" style="right:20%;top:65%;animation-delay:2.0s">✧</span>
+  <span class="star-twinkle" style="left:42%;top:18%;animation-delay:1.0s">✦</span>
+
+  <div class="fin">FIN · 致 西 西</div>
+
+  <div class="signature-line">
+    <span class="l"></span>
+    所 有 的 浪 漫 · 为 <em>星 星</em> 所 创 造
+    <span class="l"></span>
+  </div>
+  <div class="signature-en">— All romance · is made by the stars. —</div>
+
+  <div class="meta">
+    LOVE LETTER · NO.520 · VOL.01<br/>
+    Written by hand · Sung by voice · Sent by night <span class="heart">♥</span><br/>
+    © 2026 · 星 星 · for · 西 西
+  </div>
+</footer>
+
+<audio id="bgm" src="geng.mp3" loop preload="auto" autoplay muted playsinline></audio>
+
+<script>
+(() => {
+  /* ============ 背景星点 canvas ============ */
+  const cvs = document.getElementById('stars');
+  const ctx = cvs.getContext('2d');
+  let W = cvs.width = innerWidth, H = cvs.height = innerHeight;
+  addEventListener('resize', () => { W = cvs.width = innerWidth; H = cvs.height = innerHeight; init(); });
+  const N = Math.min(160, Math.max(80, (innerWidth*innerHeight/8000)|0));
+  let stars = [];
+  function init(){
+    stars = [];
+    for(let i=0;i<N;i++) stars.push({
+      x: Math.random()*W, y: Math.random()*H,
+      r: Math.random()*1.4 + .2,
+      a: Math.random()*.8 + .2,
+      vx: (Math.random()-.5)*.05,
+      vy: (Math.random()-.5)*.05,
+      tw: Math.random()*Math.PI*2
+    });
+  }
+  init();
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    for(const s of stars){
+      s.x += s.vx; s.y += s.vy; s.tw += .04;
+      if(s.x < 0) s.x = W; if(s.x > W) s.x = 0;
+      if(s.y < 0) s.y = H; if(s.y > H) s.y = 0;
+      const a = s.a * (.5 + Math.sin(s.tw)*.5);
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(243,236,223,${a})`;
+      ctx.shadowBlur = 6;
+      ctx.shadowColor = 'rgba(255,200,180,.6)';
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  /* ============ 进度条 + 侧标 ============ */
+  const prog = document.getElementById('progress');
+  const sidetag = document.getElementById('sidetag');
+  const sections = [...document.querySelectorAll('section,footer')];
+  let curTag = '';
+  function onScroll(){
+    const max = document.documentElement.scrollHeight - innerHeight;
+    prog.style.width = (scrollY/max*100) + '%';
+    let active = null;
+    for(const s of sections){
+      const r = s.getBoundingClientRect();
+      if (r.top < innerHeight*.5 && r.bottom > innerHeight*.5){ active = s; break; }
+    }
+    if(active){
+      const tag = active.dataset.tag || (active.classList.contains('cover') ? 'CHAPTER · 01 · COVER' : (active.tagName === 'FOOTER' ? 'CHAPTER · 11 · FIN' : ''));
+      if(tag && tag !== curTag){ curTag = tag; sidetag.textContent = tag; }
+    }
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ============ Reveal 触发 ============ */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, { threshold: .15 });
+  document.querySelectorAll('.reveal,.tl-item,.promises,.wishes').forEach(el => io.observe(el));
+
+  /* ============ 计数器 0 → 520 ============ */
+  const counterEl = document.getElementById('counterNum');
+  let counterStarted = false;
+  const counterIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting && !counterStarted){
+        counterStarted = true;
+        const target = 520;
+        const dur = 2400;
+        const start = performance.now();
+        function step(t){
+          const p = Math.min(1, (t - start)/dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          counterEl.textContent = Math.round(target * eased).toString().padStart(3,'0');
+          if(p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+    });
+  }, { threshold: .4 });
+  counterIo.observe(counterEl);
+
+  /* ============ 名字 / 中文逐字入场 ============ */
+  const nameBig = document.getElementById('nameBig');
+  const nameEn = document.getElementById('nameEn');
+  const nameIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        const chars = nameBig.querySelectorAll('.char');
+        chars.forEach((c, i) => setTimeout(() => c.classList.add('in'), 200 + i*220));
+        setTimeout(() => nameEn.classList.add('in'), 200 + chars.length*220);
+        nameIo.unobserve(nameBig);
+      }
+    });
+  }, { threshold: .5 });
+  nameIo.observe(nameBig);
+
+  /* ============ 光区跟随 ============ */
+  const lightWrap = document.getElementById('lightWrap');
+  const lightOrb = document.getElementById('lightOrb');
+  if(lightWrap && lightOrb){
+    let visible = false;
+    lightWrap.addEventListener('mouseenter', () => { visible = true; lightOrb.style.opacity = '1'; });
+    lightWrap.addEventListener('mouseleave', () => { visible = false; lightOrb.style.opacity = '0'; });
+    lightWrap.addEventListener('mousemove', e => {
+      const r = lightWrap.getBoundingClientRect();
+      lightOrb.style.left = (e.clientX - r.left - 100) + 'px';
+      lightOrb.style.top  = (e.clientY - r.top - 100) + 'px';
+    });
+    lightOrb.style.opacity = '0';
+  }
+
+  /* ============ 音乐 · 双音轨切换 ============ */
+  const audio = document.getElementById('bgm');
+  const toggle = document.getElementById('audioToggle');
+  const switcher = document.getElementById('audioSwitch');
+  const trackName = document.getElementById('trackName');
+  const iconPlay = document.getElementById('iconPlay');
+  const iconPause = document.getElementById('iconPause');
+  const voiceCard = document.getElementById('voiceCard');
+
+  const tracks = [
+    { src: 'geng.mp3', label: 'geng · <em>背景音</em>', voice: false },
+    { src: encodeURI('就是爱你_1.m4a'), label: '就是爱你 · <em>星星自唱</em>', voice: true }
+  ];
+  let curTrack = 0;
+  let playing = false;
+  const TARGET_VOL = 0.4;
+
+  function setIcon(p){
+    iconPlay.style.display  = p ? 'none' : 'inline-block';
+    iconPause.style.display = p ? 'inline-block' : 'none';
+    toggle.classList.toggle('playing', p);
+    if (voiceCard) voiceCard.classList.toggle('playing', p && tracks[curTrack].voice);
+    const va = voiceCard?.querySelector('.arrow');
+    if (va) va.textContent = (p && tracks[curTrack].voice) ? '■ STOP' : '▶ PLAY';
+  }
+
+  function loadTrack(i){
+    curTrack = (i + tracks.length) % tracks.length;
+    audio.src = tracks[curTrack].src;
+    trackName.innerHTML = tracks[curTrack].label;
+  }
+
+  function fadeIn(){
+    let v = audio.volume;
+    const fade = setInterval(() => {
+      v = Math.min(TARGET_VOL, v + .015);
+      audio.volume = v;
+      if (v >= TARGET_VOL) clearInterval(fade);
+    }, 70);
+  }
+
+  async function play(){
+    try{
+      audio.muted = false;
+      audio.volume = 0;
+      await audio.play();
+      fadeIn();
+      playing = true; setIcon(true);
+      return true;
+    }catch(e){ return false; }
+  }
+  function pause(){ audio.pause(); playing = false; setIcon(false); }
+
+  toggle.addEventListener('click', () => { playing ? pause() : play(); });
+  switcher.addEventListener('click', () => {
+    const wasPlaying = playing;
+    if(playing) pause();
+    loadTrack(curTrack + 1);
+    if(wasPlaying) setTimeout(play, 150);
+  });
+  audio.addEventListener('ended', () => { setIcon(false); playing = false; });
+
+  if (voiceCard){
+    voiceCard.addEventListener('click', () => {
+      if (tracks[curTrack].voice && playing){ pause(); return; }
+      if (!tracks[curTrack].voice){
+        if(playing) pause();
+        loadTrack(1);
+      }
+      play();
+    });
+  }
+
+  /* ============ 入场页 · 点击进入并启动音乐 ============ */
+  const enter = document.getElementById('enter');
+  let entered = false;
+  const beginExperience = () => {
+    if (entered) return;
+    entered = true;
+    audio.muted = false;
+    audio.volume = 0;
+    audio.play().then(() => { fadeIn(); playing = true; setIcon(true); }).catch(()=>{});
+    enter.classList.add('gone');
+    setTimeout(() => enter.remove(), 1600);
+  };
+  enter.addEventListener('click', beginExperience);
+  enter.addEventListener('touchstart', beginExperience, { passive: true });
+  enter.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') beginExperience();
+  });
+
+  /* ============ Promise 卡片磁吸悬停 ============ */
+  document.querySelectorAll('.promise').forEach(p => {
+    p.addEventListener('mousemove', e => {
+      const r = p.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5;
+      const y = (e.clientY - r.top) / r.height - .5;
+      p.style.transform = `translateY(-8px) rotateX(${-y*6}deg) rotateY(${x*6}deg)`;
+    });
+    p.addEventListener('mouseleave', () => { p.style.transform = ''; });
+  });
+
+  /* ============ 控制台 ============ */
+  console.log('%cLOVE LETTER · NO.520','font:400 italic 36px "DM Serif Display",serif;color:#ff8fa3;letter-spacing:.2em;text-shadow:0 0 12px rgba(255,143,163,.5)');
+  console.log('%c所有的浪漫 · 为 星 星 所 创 造','color:#e9b962;font-style:italic;font-size:14px;letter-spacing:.3em');
+  console.log('%cfor 西西 · from 星星 · 5.20.2026','color:#ff8fa3;letter-spacing:.2em');
+})();
+</script>
+</body>
+</html>
